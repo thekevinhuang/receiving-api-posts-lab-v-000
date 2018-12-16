@@ -20,7 +20,7 @@
       event.preventDefault()
       var value = $(this).serialize()
 
-      var posting = $.post('/product', value)
+      var posting = $.post('/products', value)
 
       posting.done(function(data){
         var post= data
