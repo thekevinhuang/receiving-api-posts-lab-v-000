@@ -15,5 +15,16 @@
 <% end %>
 
 <script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('form').submit(function(event) {
+      event.preventDefault()
+      var value = $(this).serialize()
 
+      var posting = $.post('/post', value)
+
+      posting.done(function(data){
+        var post= data
+      })
+    })
+  })
 </script>
