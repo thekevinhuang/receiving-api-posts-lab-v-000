@@ -19,7 +19,7 @@
   <p id="productPrice"></p>
   <p id="productDescription"></p>
   <p id="productInventory"></p>
-  
+
 </div>
 
 <script type="text/javascript" charset="utf-8">
@@ -31,7 +31,13 @@
       var posting = $.post('/products', value)
 
       posting.done(function(data){
-        var post= data
+        var product = data
+        
+        $('#productName').text(product["name"])
+        $('#productPrice').text(product["price"])
+        $('#productDescription').text(product["description"])
+        $('#productInventory').text(product["inventory"])
+        
       })
     })
   })
